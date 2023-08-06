@@ -1,0 +1,214 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/**===== loader Auth=====*/
+#circle5 {
+  display: block;
+  height: 20px;
+  width: 20px;
+  border: 2px rgba(0, 0, 0, 0.25) solid;
+  border-top: 2px #fff solid;
+  border-right: 2px #fff solid;
+  border-bottom: 2px transparent solid;
+  border-radius: 50%;
+  -webkit-animation: spin5 0.4s infinite linear;
+  animation: spin5 0.4s infinite linear;
+}
+#circle5big {
+  display: block;
+  height: 80px;
+  width: 80px;
+  border: 2px rgba(0, 0, 0, 0.25) solid;
+  border-top: 2px #fff solid;
+  border-right: 2px #fff solid;
+  border-bottom: 2px transparent solid;
+  border-radius: 50%;
+  -webkit-animation: spin5 0.4s infinite linear;
+  animation: spin5 0.4s infinite linear;
+}
+@-webkit-keyframes spin5 {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes spin5 {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+/** END of circle5 */
+
+/*Loader card*/
+
+.esqueleton_card .card {
+  width: auto;
+  padding: 0px;
+  background-color: transparent;
+  font-family: "@microsoft yahei light", sans-serif;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.esqueleton_card .cover {
+  height: 270px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.esqueleton_card .cover img {
+  display: block;
+  width: 100%;
+  opacity: 0.95;
+  border-radius: 5px;
+}
+
+/* add to img on load event */
+.esqueleton_card .animate {
+  animation: animate 1s ease;
+}
+@keyframes animate {
+  from {
+    transform: rotateX(20deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+.esqueleton_card .content {
+  position: relative;
+  color: #333;
+  margin-top: 8px;
+  border-radius: 8px;
+}
+.esqueleton_card .content small {
+  display: block;
+  margin: 8px 0;
+  color: grey;
+}
+
+/* sleleton elements */
+.esqueleton_card .skeleton {
+  background: linear-gradient(
+    90deg,
+    hsl(210, 15%, 88%),
+    hsl(210, 15%, 95%),
+    hsl(210, 15%, 88%)
+  );
+  background: linear-gradient(
+    90deg,
+    hsl(0, 0%, 35%),
+    hsl(0, 0%, 21%),
+    hsl(0, 0%, 19%)
+  );
+  background-size: 200%;
+  animation: loader_card_esqueleton 1s infinite reverse;
+}
+.esqueleton_card h2.skeleton {
+  width: 10%;
+  height: 1em;
+}
+.esqueleton_card small.skeleton {
+  height: 1rem;
+  width: 4rem;
+}
+.esqueleton_card p.skeleton {
+  height: 3em;
+}
+
+/* skeleton animation */
+@keyframes loader_card_esqueleton {
+  from {
+    background-position: -100% 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
+
+/* borrar luego :V*/
+.gradient {
+  background: linear-gradient(50deg, #fff, #999);
+}
+.button {
+  position: relative;
+  color: #555;
+  background: linear-gradient(50deg, #fff, #999);
+  border-radius: 80px;
+  text-align: center;
+  margin: 10px;
+  font-size: 30px;
+  box-shadow: 0.5px -0.5px 1px 1px #fff, -1px 1px 1px 1px #999,
+    -5px 8px 15px 1px #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  user-select: none;
+}
+
+.button.sm {
+  width: 60px;
+  height: 60px;
+}
+
+.button.md {
+  width: 240px;
+  height: 80px;
+}
+
+.button.lg {
+  width: 400px;
+  height: 80px;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button:active {
+  font-size: 26px;
+  box-shadow: 0.5px -0.5px 1px 0.5px #fff, -1px 1px 1px 0.5px #999,
+    -1px 4px 10px 1px #999;
+}
+
+.check {
+  position: absolute;
+  left: 0;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  opacity: 0;
+  cursor: pointer;
+}
+.check-toggle:active ~ svg {
+  color: #1eabbe;
+}
+.check:checked ~ svg {
+  color: #1eabbe;
+}
+
+/*alert*/
+
+.fixed-alert {
+  position: absolute;
+  right: 0%;
+  top: 10%;
+  margin: 0.75rem;
+  z-index: 9999999;
+}
